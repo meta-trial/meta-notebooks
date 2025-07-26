@@ -1,0 +1,38 @@
+[project]
+name = "meta-notebooks"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dj-notebook>=0.7.0",
+    "edc>=1.2.0",
+    "great-tables>=0.18.0",
+    "matplotlib>=3.10.3",
+    "matplotlib-venn>=1.1.2",
+    "meta-edc>=1.1.10",
+    "pdfkit>=1.0.0",
+    "scikit-learn>=1.7.1",
+    "scipy>=1.16.0",
+    "tabulate>=0.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "ruff>=0.12.5",
+]
+
+[tool.ruff.lint]
+ignore = ["E712"]
+
+[tool.black]
+line-length = 95
+target-version = ["py312"]
+extend-exclude = '''^(.*\/)*\b(migrations)\b($|\/.*$)'''
+
+[tool.isort]
+profile = "black"
+py_version = "312"
+skip = [".tox", ".eggs", "migrations", "_version.py"]
